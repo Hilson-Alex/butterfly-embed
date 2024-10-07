@@ -1,4 +1,4 @@
-//go:build default
+//go:build !queue
 
 package runtime
 

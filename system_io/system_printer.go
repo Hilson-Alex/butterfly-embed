@@ -8,6 +8,7 @@ import (
 
 func init() {
 	const moduleName = "Standard Output"
+
 	runtime.BF__EventSubscribe("Sys Println", moduleName, func(message runtime.BF__MessageContent) {
 		switch value := message["text"].(type) {
 		case []interface{}:
@@ -19,6 +20,7 @@ func init() {
 			runtime.BF__Dispatch(event.(string), runtime.BF__MessageCreate(moduleName, map[string]interface{}{}))
 		}
 	})
+
 	runtime.BF__EventSubscribe("Sys Printf", moduleName, func(message runtime.BF__MessageContent) {
 		var text string
 		var args []any
